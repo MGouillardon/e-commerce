@@ -10,10 +10,15 @@ switch (getUri()) {
         echo $user->index();
         break;
     case '/login':
-        echo $user->getLogIn();
+        echo $user->isRegistered();
+        break;
+    case '/getregistered':
+        echo $user->createUser();
+        break;
+    case '/connection':
+        echo $user->connection();
         break;
     case '/home':
         echo $user->isRegistered();
         break;
-    
 }
