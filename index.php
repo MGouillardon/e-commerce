@@ -1,10 +1,10 @@
 <?php
 
-use App\Controllers\UserController;
+use App\Controllers\AuthentificationController;
 
 require_once './vendor/autoload.php';
 
-$user = new UserController();
+$user = new AuthentificationController();
 switch (getUri()) {
     case '/':
         echo $user->index();
@@ -19,6 +19,6 @@ switch (getUri()) {
         echo $user->connection();
         break;
     case '/home':
-        echo $user->isRegistered();
+        echo $user->isConnected();
         break;
 }

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\User;
 
-class UserController extends Controller
+class AuthentificationController extends Controller
 {
     public function index(): string
     {
@@ -18,6 +18,12 @@ class UserController extends Controller
         return $this->template->render('login.html.twig');
     }
 
+    public function isConnected(): string
+    {
+
+        return $this->template->render('home.html.twig');
+    }
+
     public function createUser(): string {
 
         $userModel = new User();
@@ -29,16 +35,20 @@ class UserController extends Controller
         return $this->template->render('login.html.twig');
        
     }
-    public function connection(): string {
+    public function connection(): void {
 
         $userModel = new User();
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        var_dump('hello');
         $user = $userModel->getUser($email);
-        var_dump($user);
-        header( 'Location : /home');
-        exit();
-        
-        return $this->template->render('home.html.twig');
-       
+
+        if (password_verify($password, $user['password'])){
+            $_SESSION['user'] = $user['name'];
+            header('Location: /home');
+            exit;
+        }
+               
     }
     
 }

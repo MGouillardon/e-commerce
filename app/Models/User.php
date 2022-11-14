@@ -8,6 +8,7 @@ class User extends Model
 {
     static protected string $table = 'users';
 
+
     public function createUser(string $name, string $email, string $password): void
     {
         $user = ORM::for_table(self::$table)->create();
@@ -20,7 +21,9 @@ class User extends Model
 
     public function getUser(string $email): ORM|bool
     {
-        return ORM::forTable(self::$table)->findOne($email);
+        return ORM::for_table(self::$table)->where('email', ':email')->find_one($email);
+
+        var_dump("salut");
     }
     
 }
