@@ -1,0 +1,137 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8fcfc;
+    display: flex;
+    height: 100vh;
+    
+}
+
+.left-side {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.register__title {
+    font-size: clamp(24px, 1vw, 48px);
+    text-align: center;
+}
+
+.register__title span {
+    font-size: clamp(28px, 5vw, 60px);
+    font-weight: 800;
+    display: block;
+}
+
+.signup-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.label-input {
+    position: relative;
+    display: block;
+    
+}
+
+.label {
+    pointer-events: none;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    transform: translate(0%,50%);
+    color: #80848d;
+    font-size: 20px;
+    transition: all 0.2s;
+    transform-origin: left;
+}
+
+
+form.signup-form input[type="text"], input[type="email"], 
+input[type="password"]{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    margin-top: 30px; 
+    height: 50px; 
+    width: 500px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 2px solid #a57b5f;
+
+}
+
+form.signup-form input:focus {
+    border: 2px solid #2E1F27;
+    outline: none;
+}
+
+
+form.signup-form button[type="submit"]{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #a57b5f;
+    margin-top: 30px;
+    justify-content: center;
+    outline: none;
+    width: 328px;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    opacity: 0.8;
+    cursor: pointer;
+    
+}
+
+.input-text:not(:placeholder-shown) + .label,
+.input-text:focus + .label {
+    top: 6px;
+    transform: scale(0.7);
+  }
+
+.input-text:focus + .label {
+    color: #2E1F27;
+  }
+  
+form.signup-form button:hover {
+    opacity: 1;
+}
+
+.signup-form button span { 
+    color: white;
+} 
+
+.signup-form p {
+    padding: 10px;
+}
+
+.signup-form p span a {
+    color: #a57b5f;
+    text-decoration: none;
+    
+ }
+
+.right-side {
+    width: 50%;
+    padding: 5vh;
+    
+}
+.right-side__img {
+    background-image: url(https://images.unsplash.com/photo-1590420485404-f86d22b8abf8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+}

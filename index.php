@@ -1,13 +1,19 @@
 <?php
 
-use App\Controllers\RegisterController;
+use App\Controllers\UserController;
 
 require_once './vendor/autoload.php';
 
-$register = new RegisterController();
+$user = new UserController();
 switch (getUri()) {
     case '/':
-        echo $register->index();
+        echo $user->index();
+        break;
+    case '/login':
+        echo $user->getLogIn();
+        break;
+    case '/home':
+        echo $user->isRegistered();
         break;
     
 }

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+	<div class="left-side">
+		<div class="register">
+			<div class="register__title">
+				<h1>Create your account and join</h1>
+				<span>LA MEUTE</span>
+				<span>AHOUUUUUUUUUUUUUU</span>
+			</div>
+			<form class="signup-form" action="/home" method="POST">
+
+				<label class="label-input">
+					<input type="email" class="input-text" name="email" placeholder="&nbsp;">
+					<span class="label">Email</span>
+				</label>
+
+				<label class="label-input">
+					<input type="password" name="password" class="input-text" placeholder="&nbsp;">
+					<span class="label">Mot de passe</span>
+				</label>
+
+				<button type="submit">
+					<span>Se connecter<span></button>
+						<p>Vous n'avez pas de compte ?<span>
+								<a href="/">Inscrivez-vous!</a>
+								<span></p>
+							</form>
+						</p>
+					</div>
+				</div>
+				<div class="right-side">
+					<div class="right-side__img--login"></div>
+				</div>
+
+			{% endblock %}
