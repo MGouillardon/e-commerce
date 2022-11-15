@@ -1,11 +1,25 @@
 {% extends 'base.html.twig' %}
 {% block main %}
+<div class="homepage">
 	{% include './components/navigation.html.twig' %}
 
-	<div>
-		<h1>{{ session.user }}</h1>
-		<p>Salut les amis c'est la homepage</p>
+	<div class="cta">
+	<pre role="scrolling-text-cta">Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		</pre>
+	</div>
+	<div class="homepage__title">SHOP THE COLLECTION</div>
+	<div class="homepage__sort">
+		<ul class="homepage__sort__list">
+			<li>SORT</li>
+			<li><i class="fa-solid fa-plus"></i></li>
+		</ul>
+	</div>
+	<div class="homepage__filter">
+		<ul class="homepage__filter__list">
+			<li>FILTER</li>
+			<li><i class="fa-solid fa-plus"></i></li>
+		</ul>
 	</div>
 	
-
+	
+</div>
 {% endblock %}
