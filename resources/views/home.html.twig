@@ -1,9 +1,4 @@
 {% extends 'base.html.twig' %}
-
-{% block head %}
-	<link rel="stylesheet" href="./resources/styles/homepage.css"/>
-	<title>e-commerce</title>
-{% endblock %}
 {% block main %}
 	{% include './components/navigation.html.twig' %}
 
@@ -11,6 +6,6 @@
 		<h1>{{ session.user }}</h1>
 		<p>Salut les amis c'est la homepage</p>
 	</div>
-	<a href="/logout">Log out</a>
+	
 
 {% endblock %}
