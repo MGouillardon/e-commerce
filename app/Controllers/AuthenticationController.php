@@ -3,6 +3,10 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use App\Validators\UserRegisterValidator;
+use App\Validators\UserLogInValidator;
+use App\Exceptions\ValidatorException;
+use App\Exceptions\ValidatorLogInException;
 
 class AuthenticationController extends Controller
 {
@@ -24,46 +28,44 @@ class AuthenticationController extends Controller
         return $this->template->render('home.html.twig');
     }
 
-    public function createUser(): string|bool {
-
-        $userModel = new User();
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $nameIsValid = Validator::userValidation($name);
-        $emailIsValid = Validator::emailValidation($email);
-        $hashedPassword = password_hash($_POST['password'], PASSWORD_ARGON2I);
-
-        if($nameIsValid && $emailIsValid){
-
-            $userModel->createUser($name, $email, $hashedPassword);
-            return $this->template->render('login.html.twig');
-        } else {
-            $_SESSION['message'] = 'Invalid username, email or password';
+    public function createUser(): string|bool
+    {
+        
+        try {
+            [$email, $name, $hashedPassword] = UserRegisterValidator::handle();    
+        } catch(ValidatorException $e) {
+            
+            $_SESSION['message'] = $e->getMessage();
             return $this->template->render('register.html.twig', ['session' => $_SESSION]);
-
+            
         }
-       
-    }
-    public function connection(): void {
-
         $userModel = new User();
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $user = $userModel->getUserByEmail($email);
-        if (password_verify($password, $user['password'])){
-            $_SESSION['user'] = $user['name'];
-            header('Location: /home');
-            exit;
-        }
-               
+        $userModel->createUser($name, $email, $hashedPassword);
+        return $this->template->render('login.html.twig');
     }
+
+    public function connection(): string
+    {
+        try {
+            $user = UserLogInValidator::handle();
+                    
+        } catch(ValidatorLogInException $e) {
+            
+            $_SESSION['message'] = $e->getMessage();
+            return $this->template->render('login.html.twig', ['session' => $_SESSION]);
+            
+        }
+        $_SESSION['user'] = $user['name'];
+        return $this->template->render('home.html.twig', ['session' => $_SESSION]);
+
+    }
+    
     public function logOut(): string
     {
         session_start();
         session_unset();
         session_destroy();
         header('Location: /login');
-            exit;
+        exit;
     }
-    
 }

@@ -24,6 +24,9 @@
 						<p>Vous n'avez pas de compte ?<span>
 								<a href="/">Inscrivez-vous!</a>
 								<span></p>
+								{% if session %}
+									<p>{{ session.message }}</p>
+								{% endif %}
 							</form>
 						</p>
 					</div>
