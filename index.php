@@ -1,24 +1,32 @@
 <?php
+session_start();
 
-use App\Controllers\AuthentificationController;
+
+use App\Controllers\AuthenticationController;
+use App\Controllers\HomeController;
 
 require_once './vendor/autoload.php';
 
-$user = new AuthentificationController();
+
 switch (getUri()) {
     case '/':
-        echo $user->index();
+        $authentication = new AuthenticationController();
+        echo $authentication->index();
         break;
     case '/login':
-        echo $user->isRegistered();
+        $authentication = new AuthenticationController();
+        echo $authentication->isRegistered();
         break;
     case '/getregistered':
-        echo $user->createUser();
+        $authentication = new AuthenticationController();
+        echo $authentication->createUser();
         break;
     case '/connection':
-        echo $user->connection();
+        $authentication = new AuthenticationController();
+        echo $authentication->connection();
         break;
     case '/home':
-        echo $user->isConnected();
+        $home = new HomeController();
+        echo $home->index();
         break;
 }

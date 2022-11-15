@@ -19,11 +19,11 @@ class User extends Model
 
     }
 
-    public function getUser(string $email): ORM|bool
+    public function getUserByEmail(string $email): ORM|bool
     {
-        return ORM::for_table(self::$table)->where('email', ':email')->find_one($email);
 
-        var_dump("salut");
+        return ORM::for_table(self::$table)->where('email', "$email")->find_one();
+
     }
     
 }

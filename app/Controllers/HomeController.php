@@ -6,7 +6,8 @@ class HomeController extends Controller
 {
     public function index(): string
     {
-        return $this->template->render('home.html.twig');
+        $name = $_SESSION['user'];
+        return $this->template->render('home.html.twig', ['username' => $name]);
     }
 
 }

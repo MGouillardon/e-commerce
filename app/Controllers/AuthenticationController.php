@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\User;
 
-class AuthentificationController extends Controller
+class AuthenticationController extends Controller
 {
     public function index(): string
     {
@@ -29,7 +29,6 @@ class AuthentificationController extends Controller
         $userModel = new User();
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $password = $_POST['password'];
         $hashedPassword = password_hash($_POST['password'], PASSWORD_ARGON2I);
         $userModel->createUser($name, $email, $hashedPassword);
         return $this->template->render('login.html.twig');
@@ -40,9 +39,7 @@ class AuthentificationController extends Controller
         $userModel = new User();
         $email = $_POST['email'];
         $password = $_POST['password'];
-        var_dump('hello');
-        $user = $userModel->getUser($email);
-
+        $user = $userModel->getUserByEmail($email);
         if (password_verify($password, $user['password'])){
             $_SESSION['user'] = $user['name'];
             header('Location: /home');
