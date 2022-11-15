@@ -16,6 +16,7 @@
     "require": {
         "twig/twig": "^3.4",
         "robmorgan/phinx": "^0.13.1",
-        "j4mie/idiorm": "^1.5"
+        "j4mie/idiorm": "^1.5",
+        "respect/validation": "^2.2"
     }
 }
