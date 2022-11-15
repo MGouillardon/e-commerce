@@ -24,14 +24,24 @@ class AuthenticationController extends Controller
         return $this->template->render('home.html.twig');
     }
 
-    public function createUser(): string {
+    public function createUser(): string|bool {
 
         $userModel = new User();
         $name = $_POST['name'];
         $email = $_POST['email'];
+        $nameIsValid = Validator::userValidation($name);
+        $emailIsValid = Validator::emailValidation($email);
         $hashedPassword = password_hash($_POST['password'], PASSWORD_ARGON2I);
-        $userModel->createUser($name, $email, $hashedPassword);
-        return $this->template->render('login.html.twig');
+
+        if($nameIsValid && $emailIsValid){
+
+            $userModel->createUser($name, $email, $hashedPassword);
+            return $this->template->render('login.html.twig');
+        } else {
+            $_SESSION['message'] = 'Invalid username, email or password';
+            return $this->template->render('register.html.twig', ['session' => $_SESSION]);
+
+        }
        
     }
     public function connection(): void {
@@ -46,6 +56,14 @@ class AuthenticationController extends Controller
             exit;
         }
                
+    }
+    public function logOut(): string
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+        header('Location: /login');
+            exit;
     }
     
 }

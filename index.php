@@ -17,6 +17,10 @@ switch (getUri()) {
         $authentication = new AuthenticationController();
         echo $authentication->isRegistered();
         break;
+    case '/logout':
+        $authentication = new AuthenticationController();
+        echo $authentication->logOut();
+        break;
     case '/getregistered':
         $authentication = new AuthenticationController();
         echo $authentication->createUser();
