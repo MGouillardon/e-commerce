@@ -3,10 +3,7 @@
 namespace App\Validators;
 
 use App\Models\User;
-
-
 use App\Exceptions\ValidatorLogInException;
-
 
 class UserLogInValidator
 {
@@ -23,5 +20,3 @@ class UserLogInValidator
         return $user;
     }
 }
-
-

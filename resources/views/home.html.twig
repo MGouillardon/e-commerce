@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block main %}
-<div>
-<h1>{{ session.user }}</h1>
-    <p>Salut les amis c'est la homepage</p>
-</div>
-<a href="/logout">Log out</a>
-    
+{% include './components/navigation.html.twig' %}
+
+	<div>
+		<h1>{{ session.user }}</h1>
+		<p>Salut les amis c'est la homepage</p>
+	</div>
+	<a href="/logout">Log out</a>
+
 {% endblock %}
