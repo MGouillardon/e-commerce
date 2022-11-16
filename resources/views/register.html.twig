@@ -1,43 +1,46 @@
 {% extends 'base.html.twig' %}
 {% block main %}
-<main class="register-page">
+	<main class="register-page">
 
-<div class="left-side">
-<div class="register">
-    <div class="register__title">
-        <h1>Create your account and join</h1>
-         <span>LA MEUTE</span>
-         <span>AHOUUUUUUUUUUUUUU</span>
-    </div>
-    <form class="signup-form"  action="/getregistered" method="POST">
-            
-            <label class="label-input">
-            <input type="text" class="input-text" name="name" placeholder="&nbsp;">
-            <span class="label">Nom</span>
-            </label>
+		<div class="left-side">
+			<div class="register">
+				<div class="register__title">
+					<h1>Create your account and join</h1>
+					<span>LA MEUTE</span>
+					<span>AHOUUUUUUUUUUUUUU</span>
+				</div>
+				<form class="signup-form" action="/getregistered" method="POST">
 
-            <label class="label-input">
-            <input type="email" class="input-text" name="email" placeholder="&nbsp;">
-            <span class="label">Email</span>
-            </label>
+					<label class="label-input">
+						<input type="text" class="input-text" name="name" placeholder="&nbsp;">
+						<span class="label">Nom</span>
+					</label>
 
-            <label class="label-input">
-            <input type="password" name="password" class="input-text" placeholder="&nbsp;">
-            <span class="label">Mot de passe</span>
-            </label>
-        
-            <button type="submit"><span>S'inscrire<span></button>
-            <p>Vous avez déjà un compte ?<span> <a href="/login">Connectez-vous!</a><span></p>
-            {% if session %}
-                <p class="error-msg">{{ session.message }}</p>
-            {% endif %}
-        </form>
+					<label class="label-input">
+						<input type="email" class="input-text" name="email" placeholder="&nbsp;">
+						<span class="label">Email</span>
+					</label>
 
-</div>
-</div>
-<div class="right-side">
-<div class="right-side__img"></div>
-</div>
-</main>
+					<label class="label-input">
+						<input type="password" name="password" class="input-text" placeholder="&nbsp;">
+						<span class="label">Mot de passe</span>
+					</label>
 
-{% endblock %}
+					<button type="submit">
+						<span>S'inscrire<span></button>
+							<p>Vous avez déjà un compte ?<span>
+									<a href="/login">Connectez-vous!</a>
+									<span></p>
+									{% if session %}
+										<p class="error-msg">{{ session.message }}</p>
+									{% endif %}
+								</form>
+							</p>
+						</div>
+					</div>
+					<div class="right-side">
+						<div class="right-side__img"></div>
+					</div>
+				</main>
+
+			{% endblock %}

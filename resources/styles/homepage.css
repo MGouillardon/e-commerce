@@ -91,6 +91,9 @@
 
 .card__img{
     height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card__img > img {
