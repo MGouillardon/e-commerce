@@ -7,6 +7,7 @@ use App\Validators\UserRegisterValidator;
 use App\Validators\UserLogInValidator;
 use App\Exceptions\ValidatorException;
 use App\Exceptions\ValidatorLogInException;
+use App\Exceptions\EmailAlreadyExistsException;
 
 class AuthenticationController extends Controller
 {
@@ -38,6 +39,10 @@ class AuthenticationController extends Controller
             $_SESSION['message'] = $e->getMessage();
             return $this->template->render('register.html.twig', ['session' => $_SESSION]);
             
+        } catch (EmailAlreadyExistsException $e ) {
+
+            $_SESSION['message'] = $e->getMessage();
+            return $this->template->render('register.html.twig', ['session' => $_SESSION]);
         }
         $userModel = new User();
         $userModel->createUser($name, $email, $hashedPassword);
@@ -54,9 +59,10 @@ class AuthenticationController extends Controller
             $_SESSION['message'] = $e->getMessage();
             return $this->template->render('login.html.twig', ['session' => $_SESSION]);
             
-        }
+        } 
         $_SESSION['user'] = $user['name'];
-        return $this->template->render('home.html.twig', ['session' => $_SESSION]);
+        header('location: /home');
+        exit;
 
     }
     

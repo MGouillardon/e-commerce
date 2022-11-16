@@ -3,6 +3,9 @@
 namespace App\Validators;
 
 use App\Exceptions\ValidatorException;
+use App\Exceptions\EmailAlreadyExistsException;
+use App\Models\User;
+
 
 class UserRegisterValidator 
 {
@@ -17,6 +20,10 @@ class UserRegisterValidator
         if (!$nameIsValid || !$emailIsValid) {
             throw new ValidatorException('Invalid username, email or password');
             }
+        $user = new User();
+        if($user->exist($email) === true){
+            throw new EmailAlreadyExistsException('Email already exists');
+        }
 
         return [$email, $name, $hashedPassword];
     }

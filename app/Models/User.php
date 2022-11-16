@@ -25,5 +25,12 @@ class User extends Model
         return ORM::for_table(self::$table)->where('email', "$email")->find_one();
 
     }
+
+    public function exist(string $email): bool
+    {
+
+        return (bool)ORM::for_table(self::$table)->where('email', "$email")->count();
+
+    }
     
 }

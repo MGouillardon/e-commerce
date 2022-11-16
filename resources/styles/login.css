@@ -127,3 +127,7 @@ form.signup-form button:hover {
     border-radius: 20px;
 
 }
+.error-msg{
+    font-size: 20px;
+    color: red;
+}

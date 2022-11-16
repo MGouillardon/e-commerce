@@ -2,10 +2,9 @@
 {% block main %}
 <div class="homepage">
 	{% include './components/navigation.html.twig' %}
+	{% include './components/cta.html.twig' %}
 
-	<div class="cta">
-	<pre role="scrolling-text-cta">Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		Free Shipping		</pre>
-	</div>
+	
 	<div class="homepage__title">SHOP THE COLLECTION</div>
 	<div class="homepage__sort">
 		<ul class="homepage__sort__list">
@@ -19,7 +18,53 @@
 			<li><i class="fa-solid fa-plus"></i></li>
 		</ul>
 	</div>
-	
+	<div class="products">
+    <div class="products__card">
+        <div class="card__img"></div>
+        <div class="card__content">
+        <div class="content__title"><a href="/product">Nom du produit</a></div>
+        <ul class="content__description">
+            <li class="content__price">Prix $</li>
+            <li class="content__add"><a href="/kart"><i class="fa-sharp fa-solid fa-plus"></i></a></li>
+        </ul>
+
+        </div>
+    </div>
+    <div class="products__card">
+        <div class="card__img"></div>
+        <div class="card__content">
+        <div class="content__title"><a href="#">Nom du produit</a></div>
+        <ul class="content__description">
+            <li class="content__price">Prix $</li>
+            <li class="content__add"><a href="/kart"><i class="fa-sharp fa-solid fa-plus"></i></a></li>
+        </ul>
+
+        </div>
+    </div>
+    <div class="products__card">
+        <div class="card__img"></div>
+        <div class="card__content">
+        <div class="content__title"><a href="#">Nom du produit</a></div>
+        <ul class="content__description">
+            <li class="content__price">Prix $</li>
+            <li class="content__add"><a href="/kart"><i class="fa-sharp fa-solid fa-plus"></i></a></li>
+        </ul>
+
+        </div>
+    </div>
+    <div class="products__card">
+        <div class="card__img"></div>
+        <div class="card__content">
+        <div class="content__title"><a href="#">Nom du produit</a></div>
+        <ul class="content__description">
+            <li class="content__price">Prix $</li>
+            <li class="content__add"><a href="/kart"><i class="fa-sharp fa-solid fa-plus"></i></a></li>
+        </ul>
+
+        </div>
+    </div>
+    
+    </div>
 	
 </div>
 {% endblock %}

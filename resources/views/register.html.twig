@@ -29,7 +29,7 @@
             <button type="submit"><span>S'inscrire<span></button>
             <p>Vous avez déjà un compte ?<span> <a href="/login">Connectez-vous!</a><span></p>
             {% if session %}
-                <p>{{ session.message }}</p>
+                <p class="error-msg">{{ session.message }}</p>
             {% endif %}
         </form>
 

@@ -70,3 +70,77 @@
     text-decoration: none;
     font-size: clamp(20px, 2vw, 24px);
 }
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 5vh;
+    gap: 5vh;
+}
+
+
+
+.products__card {
+    height: 50vh;
+    width: 40vw;
+    border: 2px solid #000;
+}
+
+.card__img{
+    height: 75%;
+}
+
+.card__content{
+    border-top: 2px solid #000;
+    height: 25%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.content__title{
+    font-size: clamp(20px, 2vw, 28px);
+    text-align: center;
+    flex-shrink: 1;
+    
+}
+
+.content__title > * {
+    text-decoration: none;
+    color: #000;
+}
+
+.content__description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.content__add{
+    text-decoration: none;
+    border: 1px solid #000;
+    color: #000;
+    background: #bdeb2e;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.content__add > * {
+    color: #000;
+    font-weight: 300;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
