@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Middlewares\Auth; 
+use App\Models\Article;
+
 
 class HomeController extends Controller
 {
@@ -9,7 +11,9 @@ class HomeController extends Controller
     {
         Auth::auth();
         $name = $_SESSION['user'];
-        return $this->template->render('home.html.twig', ['username' => $name]);
+        $articleModel = new Article();
+        $articles = $articleModel->all();
+        return $this->template->render('home.html.twig', ['username' => $name, 'articles' => $articles]);
     }
 
 }

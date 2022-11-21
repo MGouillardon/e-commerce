@@ -35,7 +35,7 @@ switch (getUri()) {
         echo $home->index();
         break;
     case '/article':
-        $product = new ArticleController();
-        echo $product->index();
+        $article = new ArticleController();
+        echo $article->show($_GET['id']);
         break;
 }

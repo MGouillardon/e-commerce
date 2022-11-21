@@ -4,7 +4,7 @@
 	{% include './components/cta.html.twig' %}
 	<div class="product-page">
 		<div class="header">
-			<div class="header__title">Catégorie du produit</div>
+			<div class="header__title">Catégorie du produit / {{ article.category }}</div>
 		</div>
 		<div class="product">
 			<div class="left-side-product">
@@ -12,8 +12,8 @@
 				<img src="./resources/assets/switch.png" alt="Switch logo"></div>
 			</div>
 			<div class="right-side-product">
-				<div class="product__title">Nom du produit</div>
-				<div class="product__description">Description du produit</div>
+				<div class="product__title">{{ article.name }}</div>
+				<div class="product__description">{{ article.content }}</div>
 				<a href="/addKart" class="product__add">Ajouter au panier</a>
 			</div>
 		</div>
