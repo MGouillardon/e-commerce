@@ -4,7 +4,7 @@ session_start();
 
 use App\Controllers\AuthenticationController;
 use App\Controllers\HomeController;
-use App\Controllers\ProductsController;
+use App\Controllers\ArticleController;
 
 require_once './vendor/autoload.php';
 
@@ -34,8 +34,8 @@ switch (getUri()) {
         $home = new HomeController();
         echo $home->index();
         break;
-    case '/product':
-        $product = new ProductsController();
+    case '/article':
+        $product = new ArticleController();
         echo $product->index();
         break;
 }
