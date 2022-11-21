@@ -1,22 +1,21 @@
-	{% for article in articles %}
-		<div class="products__card">
-			<div class="card__img">
-				<img src="./resources/assets/switch.png" alt="Switch logo">
-			</div>
-			<div class="card__content">
-				<div class="content__title">
-					<a href="/article?id={{ article.id }}">{{ article.name }}</a>
-				</div>
-				<ul class="content__description">
-					<li class="content__price">{{ article.price }}
-						$</li>
-					<li class="content__add">
-						<a href="/kart">
-							<i class="fa-sharp fa-solid fa-plus"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
+{% for article in articles %}
+	<div class="products__card">
+		<div class="card__img">
+			<img src="./resources/assets/switch.png" alt="Switch logo">
 		</div>
-	{% endfor %}
-
+		<div class="card__content">
+			<div class="content__title">
+				<a href="/article?id={{ article.id }}">{{ article.name }}</a>
+			</div>
+			<ul class="content__description">
+				<li class="content__price">{{ article.price }}
+					$</li>
+				<li class="content__add">
+					<a href="/addCart">
+						<i class="fa-sharp fa-solid fa-plus"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endfor %}

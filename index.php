@@ -5,6 +5,7 @@ session_start();
 use App\Controllers\AuthenticationController;
 use App\Controllers\HomeController;
 use App\Controllers\ArticleController;
+use App\Controllers\CartController;
 
 require_once './vendor/autoload.php';
 
@@ -37,5 +38,9 @@ switch (getUri()) {
     case '/article':
         $article = new ArticleController();
         echo $article->show($_GET['id']);
+        break;
+    case '/cart':
+        $cart = new CartController();
+        echo $cart->index();
         break;
 }
