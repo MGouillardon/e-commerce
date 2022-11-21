@@ -10,6 +10,8 @@
 
 .navbar__logo {
     font-size: clamp(24px, 2vw, 48px);
+    text-decoration: none;
+    color: #000;
 }
 .navbar__username {
     font-size: clamp(20px, 2vw, 36px);

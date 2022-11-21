@@ -2,10 +2,20 @@
 {% block main %}
 	{% include './components/navigation.html.twig' %}
 	{% include './components/cta.html.twig' %}
-
-
-	<div>
-		<p>Salut les amis c'est la page produit</p>
+	<div class="product-page">
+		<div class="header">
+			<div class="header__title">Catégorie du produit</div>
+		</div>
+		<div class="product">
+			<div class="left-side-product">
+				<div class="product__img"></div>
+			</div>
+			<div class="right-side-product">
+				<div class="product__title">Nom du produit</div>
+				<div class="product__description">Description du produit</div>
+				<a href="/addKart" class="product__add">Ajouter au panier</a>
+			</div>
+		</div>
 	</div>
 
 {% endblock %}
