@@ -27,3 +27,22 @@
 .navbar__item > * {
     color: #000;
 }
+#cart-js {
+    position: relative;
+}
+
+.cart-quantity {
+    position: absolute;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    width: 28px;
+    color: #000;
+    background: #bdeb2e;
+    font-size: 16px;
+    border-radius: 50%;
+    transform: translate(40%, -170%);
+    border: 2px solid #000;
+}
