@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-
+if ( !isset($_SESSION["cart"]) ) {
+    $_SESSION["cart"] = 0;
+}
 use App\Controllers\AuthenticationController;
 use App\Controllers\HomeController;
 use App\Controllers\ArticleController;
@@ -38,6 +40,10 @@ switch (getUri()) {
     case '/article':
         $article = new ArticleController();
         echo $article->show($_GET['id']);
+        break;
+    case '/addCart':
+        $cart = new CartController();
+        echo $cart->addToCart();
         break;
     case '/cart':
         $cart = new CartController();
