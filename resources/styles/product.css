@@ -74,7 +74,34 @@
   align-items: center;
   justify-content: center;
 }
+.footer {
+  padding-top: 5vh;
+  width: 100%;
+  padding-inline: 5vh;
+  position: relative;
+}
+.footer > * {
+  text-decoration: none;
+  color: #000;
+  background: #bdeb2e;
+  border: 2px solid #000;
+  padding: 1vh;
+}
 
+.footer a:nth-child(1){
+  position: absolute;
+  left: 5vh;
+  bottom: 0;
+  
+}
+.footer a:nth-child(2){
+  position: absolute;
+  right: 5vh;
+  bottom: 0;
+}
+.hidden {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .product {
     flex-direction: column;

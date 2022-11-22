@@ -24,6 +24,10 @@
 		<div class="products">
 			{% include './components/list.html.twig' %}
 		</div>
+		<div class="footer">
+			<a class="{% if page == 1  %} hidden {% endif %}" href="/home?page={{ page - 1 }}">Previous</a>
+			<a class="{% if page == pages  %} hidden {% endif %}" href="/home?page={{ page + 1 }}">Next</a>
+		</div>
 
 	</div>
 {% endblock %}

@@ -10,10 +10,21 @@ class HomeController extends Controller
     public function index(): string
     {
         Auth::auth();
-        $name = $_SESSION['user'];
+        $page = $_GET['page']??'1';
+        [$articles, $pages] = $this->pagination($page);
+        
+        
+        return $this->template->render('home.html.twig', ['username' => $_SESSION['user'], 'articles' => $articles, 'page' => $page, 'pages' => $pages]);
+    }
+    private function pagination(int $page): array {
+        $perPage = 2;
+        $first = ($page * $perPage)  - $perPage;
         $articleModel = new Article();
-        $articles = $articleModel->all();
-        return $this->template->render('home.html.twig', ['username' => $name, 'articles' => $articles]);
+        $nbArticles = $articleModel->getNbArticles();
+        $pages = ceil($nbArticles / $perPage);
+        $articles = $articleModel->getArticlesTwoByTwo($first, $perPage);
+
+        return [$articles, $pages];
     }
 
 }

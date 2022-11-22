@@ -18,6 +18,14 @@ class Article extends Model
     {   
         return ORM::forTable(self::$table)->findOne($id);
     }
+    public function getNbArticles() : ORM|int 
+    {
+        return ORM::forTable(self::$table)->count();
+    }
+    public function getArticlesTwoByTwo(int $first, int $perPage): array 
+    {
+        return ORM::forTable(self::$table)->order_by_desc('id')->limit($perPage)->offset($first)->find_many();
+    }
 
     
 }
