@@ -1,4 +1,5 @@
 let addButtons = document.querySelectorAll(".add");
+let cartQuantity = document.querySelector(".cart-quantity");
 let cart = document.getElementById("cart-js");
 
 for (let addBtn of addButtons) {
@@ -6,13 +7,19 @@ for (let addBtn of addButtons) {
     let response = await fetch("/addCart");
     let data = await response.json();
     let quantityCart = Object.values(data);
+    setDisplayQuantityCart(quantityCart);
     setCartQuantity(quantityCart);
   });
 }
 
+function setDisplayQuantityCart(quantityCart){
+  if(quantityCart > 0){
+    cartQuantity.style.display = "flex";
+  }
+}
+
 function setCartQuantity(quantityCart) {
-  let cartQuantity = document.createElement("div");
-  cartQuantity.classList.add("cart-quantity");
-  cart.appendChild(cartQuantity);
   cartQuantity.innerHTML = quantityCart;
 }
+
+
