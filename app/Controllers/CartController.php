@@ -20,5 +20,9 @@ class CartController extends Controller
         $_SESSION['cart']++;
         return json_encode(['cart' => $_SESSION['cart']]);
     }
+    public function getQuantityCart(): string
+    {
+        return json_encode(['cart' => $_SESSION['cart']]);
+    }
 
 }

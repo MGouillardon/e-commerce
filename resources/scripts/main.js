@@ -1,2 +1,6 @@
 import '../styles/style.css'
-import './addToCart'
+import addQuantityToCart from './addToCart';
+import getQuantityCart from './getQuantityCart';
+
+addQuantityToCart();
+getQuantityCart();

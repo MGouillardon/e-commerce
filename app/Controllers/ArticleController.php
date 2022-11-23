@@ -15,6 +15,6 @@ class ArticleController extends Controller
         $name = $_SESSION['user'];
         $articleModel = new Article();
         $article = $articleModel->get($id);
-        return $this->template->render('article.html.twig', ['article' => $article]);
+        return $this->template->render('article.html.twig', ['article' => $article, 'username' => $_SESSION['user']]);
     }
 }

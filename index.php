@@ -45,6 +45,10 @@ switch (getUri()) {
         $cart = new CartController();
         echo $cart->addToCart();
         break;
+    case '/getQuantityCart':
+        $cart = new CartController();
+        echo $cart->getQuantityCart();
+        break;
     case '/cart':
         $cart = new CartController();
         echo $cart->index();
