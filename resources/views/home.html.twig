@@ -6,6 +6,10 @@
 
 		<div class="homepage__title">SHOP THE COLLECTION</div>
 		<div class="homepage__sort">
+			<div class="homepage__sort__border">
+				<span class="sort__border-top"></span>
+				<span class="sort__border-bottom"></span>
+			</div>
 			<ul class="homepage__sort__list">
 				<li>SORT</li>
 				<li>
@@ -14,6 +18,9 @@
 			</ul>
 		</div>
 		<div class="homepage__filter">
+			<div class="homepage__filter__border">
+				<span class="filter__border-bottom"></span>
+			</div>
 			<ul class="homepage__filter__list">
 				<li>FILTER</li>
 				<li>
@@ -25,8 +32,8 @@
 			{% include './components/list.html.twig' %}
 		</div>
 		<div class="footer">
-			<a class="{% if page == 1  %} hidden {% endif %}" href="?page={{ page - 1 }}">Previous</a>
-			<a class="{% if page == pages  %} hidden {% endif %}" href="?page={{ page + 1 }}">Next</a>
+			<a class="{% if page == 1 %} hidden {% endif %}" href="?page={{ page - 1 }}">Previous</a>
+			<a class="{% if page == pages %} hidden {% endif %}" href="?page={{ page + 1 }}">Next</a>
 		</div>
 
 	</div>
