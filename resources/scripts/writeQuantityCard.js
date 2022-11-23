@@ -4,7 +4,6 @@ export default (quantityCart) => {
 };
 let cartQuantity = document.querySelector(".cart-quantity");
 
-
 function setDisplayQuantityCart(quantityCart) {
   if (quantityCart > 0) {
     cartQuantity.style.display = "flex";
