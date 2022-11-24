@@ -4,19 +4,21 @@
 	{% include './components/cta.html.twig' %}
 	<div class="product-page">
 		<div class="header">
-			<div class="header__title">Catégorie du produit / {{ article.category }}</div>
+			<div class="header__title">Catégorie du produit /
+				{{ article.category }}</div>
 		</div>
 		<div class="product">
 			<div class="left-side-product">
 				<div class="product__img">
-				<img src="./resources/assets/switch.png" alt="Switch logo"></div>
+					{% include './components/animationSquare.html.twig' %}
+					<img src="https://images.unsplash.com/photo-1565656898731-61d5df85f9a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="photo de disquette">
 			</div>
+		</div>
 			<div class="right-side-product">
 				<div class="product__title">{{ article.name }}</div>
 				<div class="product__description">{{ article.content }}</div>
 				<span class="product__add add">Ajouter au panier</span>
 			</div>
-		</div>
 	</div>
 
 {% endblock %}
