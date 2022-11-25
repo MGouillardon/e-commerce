@@ -1,17 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
 
-*, ::before, ::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Cutive Mono';
-    background: #f6f6f4;
-    height: 100vh;
+  font-family: "Cutive Mono";
+  background: #f6f6f4;
+  height: 100vh;
 }
 
-::-webkit-scrollbar{ width:10px; }
-::-webkit-scrollbar-thumb{ background: #000; border-radius: 0   px;}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 0 px;
+}
